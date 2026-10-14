@@ -1,0 +1,15 @@
+{
+  "status": "processamento_validado",
+  "resumo": [
+    {
+      "linhas": 1006405,
+      "meses": 12,
+      "movimentacoes": 51893337,
+      "admissoes": 26382492,
+      "desligamentos": 25510845,
+      "saldo": 871647
+    }
+  ],
+  "verificado_em_utc": "2026-10-14 04:04:40 UTC",
+  "sha256_csv": "fe116caf8806e57cf726019e3add7e72fb022afe24bddaf29e98cdd6642d4381"
+}

@@ -1,0 +1,8 @@
+etl_arquivo_id;etl_linha_origem;etl_original_idade;etl_original_saldomovimentacao;etl_original_salario;etl_original_horascontratuais;etl_problemas
+9;339005;38;-1;1,00e+08;44,00;salario:conversao_invalida
+9;675668;21;-1;1,00e+08;30,00;salario:conversao_invalida
+9;924868;20;1;7,05e+10;44,00;salario:conversao_invalida
+9;1201198;34;1;1,00e+08;44,00;salario:conversao_invalida
+9;1637084;22;1;1,00e+08;44,00;salario:conversao_invalida
+9;3558356;29;-1;1,00e+08;44,00;salario:conversao_invalida
+9;4110041;40;1;1,00e+08;44,00;salario:conversao_invalida

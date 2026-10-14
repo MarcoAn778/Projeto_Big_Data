@@ -1,0 +1,15 @@
+CREATE OR REPLACE TEMP TABLE agregado_mes AS SELECT competencia,
+      COALESCE(regiao,'Nao informado') AS regiao_codigo,
+      COALESCE(uf,'Nao informado') AS uf_codigo,
+      COALESCE(upper(secao),'Nao informado') AS setor_cnae,
+      COALESCE(sexo,'Nao informado') AS sexo_codigo,
+      COALESCE(racacor,'Nao informado') AS racacor_codigo,
+      faixa_etaria, COALESCE(tipomovimentacao,'Nao informado') AS tipo_movimentacao_codigo, tipo_fluxo,
+      COUNT(*) AS total_registros,
+      COUNT(*) FILTER (WHERE saldomovimentacao=1) AS admissoes,
+      COUNT(*) FILTER (WHERE saldomovimentacao=-1) AS desligamentos,
+      COALESCE(SUM(CASE WHEN saldomovimentacao IN (-1,1) THEN saldomovimentacao ELSE 0 END),0)::BIGINT AS saldo,
+      COUNT(*) FILTER (WHERE saldomovimentacao IS NULL OR saldomovimentacao NOT IN (-1,1)) AS saldo_invalido,
+      COALESCE(SUM(salario) FILTER (WHERE salario >= 0),0)::DECIMAL(38,6) AS soma_salarios_validos,
+      COUNT(salario) FILTER (WHERE salario >= 0) AS quantidade_salarios_validos
+      FROM categorias GROUP BY ALL;

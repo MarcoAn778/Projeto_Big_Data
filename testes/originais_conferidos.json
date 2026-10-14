@@ -1,0 +1,62 @@
+[
+  {
+    "arquivo": "CAGEDMOV202508.txt",
+    "sha256": "0a2748c9e4703e7c970398317e426657734804f345ef00ca67245c573a919bb6",
+    "confere": true
+  },
+  {
+    "arquivo": "CAGEDMOV202509.txt",
+    "sha256": "18d428b7dd770661c1f2295c2baa6835e3a12c8cae0998389c43ebac18ab212a",
+    "confere": true
+  },
+  {
+    "arquivo": "CAGEDMOV202510.txt",
+    "sha256": "055bfe1b76e84d9f651b03f39bde432c7b7ce34e751b6e8a7308efdadba84581",
+    "confere": true
+  },
+  {
+    "arquivo": "CAGEDMOV202511.txt",
+    "sha256": "8b2b9cebe1781f76dcef8d9b44b2e444d3d1b777b06506fc72380c104563111e",
+    "confere": true
+  },
+  {
+    "arquivo": "CAGEDMOV202512.txt",
+    "sha256": "8af9124445f9a25134a898dc1266a9b27d7699cd549ef428c863871d1ef3736d",
+    "confere": true
+  },
+  {
+    "arquivo": "CAGEDMOV202601.txt",
+    "sha256": "577814d43f2ff2acf26d34a79fb3a758267ae89fffcec2e24c37cc164dfcc3dc",
+    "confere": true
+  },
+  {
+    "arquivo": "CAGEDMOV202602.txt",
+    "sha256": "5534a81c3469b75a901d1904a02cc589f6945a3fdd12983b913afc7df75c965c",
+    "confere": true
+  },
+  {
+    "arquivo": "CAGEDMOV202603.txt",
+    "sha256": "fbddc1adb38befcf1230a2f2073e94d57543479ccb322bed55a9d1fde8c89e2a",
+    "confere": true
+  },
+  {
+    "arquivo": "CAGEDMOV202604.txt",
+    "sha256": "9c334f22d013cd11b9e47494cb313e475f4d86a8f80d0abf9eccb5c3b859cfc7",
+    "confere": true
+  },
+  {
+    "arquivo": "CAGEDMOV202605.txt",
+    "sha256": "9b6f2652e3e68a2fe6482c022daf77bbd8fb229d810c05cb925b64e38362e7ad",
+    "confere": true
+  },
+  {
+    "arquivo": "CAGEDMOV202606.txt",
+    "sha256": "ff9ee116b70fd13e3978358f71e48a915d42256c2d1f877adbaa82f0b8610131",
+    "confere": true
+  },
+  {
+    "arquivo": "CAGEDMOV202607.txt",
+    "sha256": "07b580d8d6da65ed9b87f693262981027e417ab56a111301494ee5532983475f",
+    "confere": true
+  }
+]
