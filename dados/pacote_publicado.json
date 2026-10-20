@@ -2,7 +2,7 @@
   "origem": "Base e verificacoes do commit 1173c84 do repositorio original; auditoria derivada das anomalias salariais versionadas.",
   "sha256_csv": "fe116caf8806e57cf726019e3add7e72fb022afe24bddaf29e98cdd6642d4381",
   "arquivos": {
-    "dados/arquivos_origem.csv": "8bc3696964fbb6c2f7dd109447e9b0ac030be7c972130bde56b737544453d6ba",
+    "dados/arquivos_origem.csv": "73f24f5773068f159052b4a3628c18dae5fee6ffbdfe684bf8291e4f15b30db3",
     "dados/auditoria_salarios.csv": "01e692d4b38f488e89a33c6f439b24504901502e4f0ca5204b2418bbb875a093",
     "referencias/dicionarios.csv": "318d3412bb36d04d8774e706abfac49249c547d6f8158e1aefbb9f67f83d6fde"
   },
