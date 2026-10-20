@@ -9,12 +9,12 @@ O PDF recebido começa na seção 4, como continuação da AI 03. Este mapa cobr
 | Banco na nuvem com carga | `codigo/03`, `04`, `07`, `sql/estrutura.sql`; futura `verificacoes/carga_nuvem.json` | Pendente de conta, provisionamento e carga reais |
 | 4. Infraestrutura em Terraform | `infraestrutura/*.tf`, exemplo, lock e testes | Código validado; apply real pendente |
 | 5. Segurança das informações | `.gitignore`, prompts ocultos, TLS, `documentacao/SEGURANCA.md` | Implementado no código e documentado |
-| 6. Repositório organizado | Diretórios de código, SQL, infraestrutura, dados e documentação | Preparado localmente; publicação desta revisão pendente |
+| 6. Repositório organizado | Diretórios de código, SQL, infraestrutura, dados e documentação | Publicado na branch de revisão; incorporação à principal pendente |
 | 7. README atualizado | Fonte/recorte, tratamento, decisões, modelagem, infraestrutura e execução | Atualizado |
 | 8. Justificativa tecnológica | README e `documentacao/MODELAGEM.md` | Documentada |
 | 9. Resultado esperado | TXT → R/DuckDB → agregados → PostgreSQL/Aiven → evidências | Etapa na nuvem ainda precisa ser executada |
 
-Antes do envio final, concluir a implantação pelo [guia](GUIA_IMPLANTACAO.md), publicar a revisão no GitHub e recuperar a data/URL de download dos arquivos originais quando possível. Não afirmar que o banco foi criado ou carregado com base apenas em testes locais.
+Antes do envio final, concluir a implantação pelo [guia](GUIA_IMPLANTACAO.md), incorporar a revisão à branch principal no GitHub e recuperar a data/URL de download dos arquivos originais quando possível. Não afirmar que o banco foi criado ou carregado com base apenas em testes locais.
 
 ## Evidências para a apresentação
 

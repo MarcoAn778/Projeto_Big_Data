@@ -25,4 +25,4 @@ A evidência local está em [validacao_base_atual.json](../verificacoes/validaca
 
 Não houve `terraform plan/apply` com conta real, criação de serviço Aiven, conexão com PostgreSQL remoto, teste de importação via RPostgres nem execução real da carga. A equipe informou que ainda não possui conta ou banco na nuvem. Os testes Terraform usam `mock_provider` e não criam recursos. O fluxo PostgreSQL deverá ser validado com o serviço real antes do envio final.
 
-O repositório remoto ainda precisa receber esta revisão. O arquivo `verificacoes/carga_nuvem.json` não acompanha esta preparação, pois deve ser gerado somente após uma conferência real da carga.
+A revisão foi publicada na branch `codex/entrega-terraform-seguranca`; a incorporação à branch principal continua pendente. O arquivo `verificacoes/carga_nuvem.json` não acompanha esta preparação, pois deve ser gerado somente após uma conferência real da carga.

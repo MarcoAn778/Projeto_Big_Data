@@ -123,6 +123,6 @@ O hash da base está em [resumo_processamento.json](resultados/resumo_processame
 | `verificacoes/` | Evidências locais, históricas e futura validação da nuvem |
 | `testes/` | Teste das regras de transformação e bloqueio de carga adulterada |
 
-Consulte o [mapa dos entregáveis](documentacao/ENTREGA.md) e o [registro de testes](documentacao/VALIDACAO.md). A entrega completa depende de provisionamento real, carga conferida e publicação dos arquivos atualizados no repositório.
+Consulte o [mapa dos entregáveis](documentacao/ENTREGA.md) e o [registro de testes](documentacao/VALIDACAO.md). Esta revisão está publicada na branch `codex/entrega-terraform-seguranca`. A entrega completa depende de provisionamento real, carga conferida e incorporação da revisão à branch principal.
 
 Referências técnicas: [Terraform/Aiven](https://registry.terraform.io/providers/aiven/aiven/latest/docs/resources/pg), [plano gratuito](https://aiven.io/docs/products/postgresql/concepts/pg-free-tier), [DuckDB para R](https://duckdb.org/docs/stable/clients/r), [RPostgres](https://rpostgres.r-dbi.org/).
