@@ -1,4 +1,8 @@
+if (dir.exists(".biblioteca")) .libPaths(c(".biblioteca", .libPaths()))
 if (dir.exists("testes/biblioteca")) .libPaths(c("testes/biblioteca", .libPaths()))
+necessarios <- c("DBI", "duckdb", "digest", "jsonlite")
+faltantes <- necessarios[!vapply(necessarios, requireNamespace, logical(1), quietly=TRUE)]
+if (length(faltantes)) stop("Instale os pacotes: ", paste(faltantes, collapse=", "))
 library(DBI)
 library(duckdb)
 

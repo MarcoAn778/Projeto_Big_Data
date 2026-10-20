@@ -30,6 +30,8 @@ CREATE TABLE IF NOT EXISTS caged.indicadores_emprego (
     remuneracao_media NUMERIC,
     PRIMARY KEY (id)
 );
+CREATE INDEX IF NOT EXISTS indicadores_competencia_idx ON caged.indicadores_emprego (competencia);
+CREATE INDEX IF NOT EXISTS indicadores_uf_competencia_idx ON caged.indicadores_emprego (uf_codigo, competencia);
 CREATE TABLE IF NOT EXISTS caged.revisao_salarios (
     arquivo_id INTEGER REFERENCES caged.arquivos(id), linha_origem BIGINT,
     salario_original TEXT, salario_numerico NUMERIC(38,6), classificacao TEXT,
