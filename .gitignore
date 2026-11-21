@@ -2,6 +2,9 @@
 .env
 .env.*
 !.env.example
+.streamlit/secrets.toml
+.pgpass
+pgpass.conf
 .Renviron
 .Rhistory
 .RData
@@ -36,3 +39,7 @@ resultados/VALIDADO.txt
 .Rproj.user/
 .biblioteca/
 tmp/
+.venv/
+__pycache__/
+*.py[cod]
+output/

@@ -135,6 +135,7 @@ def carregar(conn, base: BaseValidada) -> None:
                 VALUES (%s,%s,%s,%s,%s,%s)""", (base.hash_base, "marco2-python", "202508", "202607",
                     base.resumo["linhas"], base.resumo["movimentacoes"]))
             cur.execute((base.raiz / "sql/view_rotulos.sql").read_text(encoding="utf-8-sig"))
+            cur.execute("ANALYZE caged.indicadores_emprego, caged.dicionarios")
         base.conferir_arquivos()
         verificar_banco(conn, base)  # Se falhar, o bloco inteiro sofre rollback.
     # COMMIT ja aconteceu aqui. O chamador consulta novamente antes de gravar evidencia.
