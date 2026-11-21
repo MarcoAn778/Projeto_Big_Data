@@ -1,0 +1,12 @@
+{
+  "status": "convergente",
+  "provedor": "Aiven",
+  "plano": "free-1-1gb",
+  "estado_servico": "RUNNING",
+  "terraform_plan_exit_code": 0,
+  "alteracao": "Inclusao de um IPv6 /128 aos CIDRs existentes",
+  "cidrs_verificados": 3,
+  "protecao_exclusao_aiven": false,
+  "protecao_exclusao_no_terraform": true,
+  "verificado_em_utc": "2026-11-21T17:37:22.8621246+00:00"
+}

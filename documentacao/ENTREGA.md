@@ -1,25 +1,19 @@
-# Atendimento aos entregáveis do documento
+# Mapa da entrega final
 
-O PDF recebido começa na seção 4, como continuação da AI 03. Este mapa cobre o conteúdo recebido e a lista final de entrega; não presume instruções ausentes das páginas anteriores.
+| Entregável | Artefatos |
+| --- | --- |
+| Painel com consulta direta ao banco | [Streamlit](../dashboard/app.py), [consultas](../dashboard/consultas.py), [metodologia](INDICADORES.md) |
+| Execução e publicação | [Comando local e implantação opcional](DASHBOARD.md) |
+| Infraestrutura e carga | [Terraform](../infraestrutura/), [conciliação do state](../verificacoes/terraform_entrega.json), [conferência atual da carga](../verificacoes/carga_nuvem.json) |
+| README, arquitetura e análise crítica | [README](../README.md), [modelagem](MODELAGEM.md), [SQL de reprodução](../sql/analise_ods.sql) |
+| Testes e segurança | [Testes](../testes/), [validação](VALIDACAO.md), [gestão de acessos](SEGURANCA.md) |
+| Apresentação | [Roteiro de 10 minutos](PITCH.md) |
 
-| Exigência | Artefato ou evidência | Situação |
-| --- | --- | --- |
-| Código de tratamento | `codigo/00` a `02`, `sql/limpar.sql`, `categorias.sql`, `agregar.sql` | Já existente; mantido |
-| Base de dados tratada | `resultados/base_tratada.zip` e resumo com SHA-256 | Disponível e validada localmente |
-| Banco na nuvem com carga | `codigo/03`, `04`, `07`, `sql/estrutura.sql`; futura `verificacoes/carga_nuvem.json` | Pendente de conta, provisionamento e carga reais |
-| 4. Infraestrutura em Terraform | `infraestrutura/*.tf`, exemplo, lock e testes | Código validado; apply real pendente |
-| 5. Segurança das informações | `.gitignore`, prompts ocultos, TLS, `documentacao/SEGURANCA.md` | Implementado no código e documentado |
-| 6. Repositório organizado | Diretórios de código, SQL, infraestrutura, dados e documentação | Publicado na branch de revisão; incorporação à principal pendente |
-| 7. README atualizado | Fonte/recorte, tratamento, decisões, modelagem, infraestrutura e execução | Atualizado |
-| 8. Justificativa tecnológica | README e `documentacao/MODELAGEM.md` | Documentada |
-| 9. Resultado esperado | TXT → R/DuckDB → agregados → PostgreSQL/Aiven → evidências | Etapa na nuvem ainda precisa ser executada |
+O enunciado da entrega final aceita o comando local como alternativa ao link publicado. A execução usa PostgreSQL no Aiven e a hospedagem do Streamlit é opcional. A carga foi conferida em 21/11/2026. Use `verificar-nuvem` para repetir a verificação antes da apresentação.
 
-Antes do envio final, concluir a implantação pelo [guia](GUIA_IMPLANTACAO.md), incorporar a revisão à branch principal no GitHub e recuperar a data/URL de download dos arquivos originais quando possível. Não afirmar que o banco foi criado ou carregado com base apenas em testes locais.
+## Preparar a entrega
 
-## Evidências para a apresentação
-
-- Mostrar os `.tf` e o resultado real de `terraform apply`, sem informações de acesso.
-- Mostrar o serviço disponível e a consulta SQL com 1.006.405 linhas agregadas, 51.893.337 movimentações e 12 competências.
-- Mostrar o diagrama e explicar a granularidade escolhida e a média salarial ponderada.
-- Mostrar a estratégia de credenciais sem abrir valores de senha/token.
-- Mostrar o link do repositório atualizado, README e a evidência real da carga.
+1. Confira o serviço e a configuração do Terraform, com o state privado.
+2. Valide o banco e rode os testes de leitura. Teste os quatro indicadores com filtros e atualize a consulta na interface.
+3. Verifique o índice com `python codigo/verificar_segredos.py`. Gere o pacote com `python codigo/preparar_envio.py` para o fluxo de envio manual. O modo `--rascunho` prepara uma cópia de revisão enquanto a conferência ao vivo estiver pendente.
+4. Abra o README na versão enviada e ensaie a demonstração.

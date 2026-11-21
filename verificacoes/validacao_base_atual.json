@@ -1,5 +1,6 @@
 {
   "status": "validado_localmente",
+  "linguagem": "Python",
   "sha256_csv": "fe116caf8806e57cf726019e3add7e72fb022afe24bddaf29e98cdd6642d4381",
   "resumo": [
     {
@@ -12,7 +13,7 @@
     }
   ],
   "ocorrencias_auditoria": 21,
-  "origem_auditoria": "Anomalias salariais versionadas do pacote publicado; nao houve nova leitura dos TXT",
-  "verificado_em_utc": "2026-10-20 13:17:24 UTC",
+  "origem_auditoria": "Auditoria historica do pacote publicado; sem nova leitura dos TXT",
+  "verificado_em_utc": "2026-10-20T13:51:13.872304+00:00",
   "nuvem": "Nao verificada por este comando"
 }

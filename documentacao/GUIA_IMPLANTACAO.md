@@ -1,28 +1,34 @@
 # Concluir a implantação e a entrega
 
-O código está preparado, mas a criação do banco exige uma conta da equipe. Este guia usa o Aiven porque a conexão PostgreSQL do projeto anterior já previa esse provedor. Nenhuma senha ou token deve ser enviado pelo chat ou publicado no GitHub.
+Se o projeto já tem um serviço Aiven, consulte primeiro a seção de reaproveitamento e conciliação do [guia do painel](DASHBOARD.md).
+
+O fluxo desta revisão é **R trata → CSV tratado → Python valida e carrega → PostgreSQL/Aiven**, com a infraestrutura criada pelo Terraform. Todos os arquivos da entrega anterior estão preservados. As instruções atuais estão em `LEIA_ME_ETAPA_ATUAL.md`, separado do README original. Esta preparação é local; a equipe decide quando publicar. A criação do banco exige sua conta no Aiven. Nenhuma senha ou token deve ser enviado pelo chat ou publicado no GitHub.
 
 ## 1. Preparar a máquina e validar a base
 
-Instalar R, Git e Terraform pelos distribuidores oficiais. No R:
-
-```r
-install.packages(c("DBI", "duckdb", "digest", "jsonlite", "RPostgres"))
-```
-
-Abra PowerShell na raiz do projeto e execute `Rscript codigo/executar.R validar`. Se Rscript não estiver no PATH, use o caminho da versão instalada, por exemplo:
+1. Extraia o pacote `PROJETO_BIG_DATA_MARCO2_PYTHON.zip` e abra a pasta `Projeto_Big_Data`.
+2. Instale [Python](https://www.python.org/downloads/windows/) 64 bits (3.12 é a versão testada) e [Terraform](https://developer.hashicorp.com/terraform/install). R só será necessário se decidir refazer o tratamento dos TXT.
+3. Abra um PowerShell nessa pasta. Todos os comandos seguintes partem da pasta que contém `README.md`, `codigo/` e `infraestrutura/`.
+4. Crie o ambiente Python e instale as versões verificadas:
 
 ```powershell
-& 'C:\Program Files\R\R-4.6.1\bin\Rscript.exe' codigo/executar.R validar
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-lock.txt
+.\.venv\Scripts\python.exe codigo/executar.py validar
+.\.venv\Scripts\python.exe -m unittest discover -s testes -p "test_*.py" -v
 ```
 
-O comando extrai a base publicada, verifica o SHA-256 e os totais e prepara a auditoria. Não é necessário copiar novamente os TXT para carregar essa versão. Para reproduzir o tratamento integral, use os 12 TXT em `dados_originais/` e o modo `tratamento` antes da validação.
+Não é necessário ativar a venv. Se o launcher `py` não estiver disponível, use `python -m venv .venv` após conferir a versão instalada. Para outras versões compatíveis de Python, também existe `requirements.txt`; o lock registra as versões usadas nesta validação.
+
+O resultado esperado da validação é **1.006.405 linhas, 51.893.337 movimentações e 12 meses**. Ela extrai o ZIP da base quando necessário e escreve `verificacoes/validacao_base_atual.json`. Os dez testes locais devem passar; dois testes de integração ficam ignorados sem um banco local descartável configurado. Eles já foram executados na preparação desta revisão, como descrito no registro de validação.
+
+Não é necessário copiar os TXT ou executar R novamente para carregar a base publicada. Para reproduzir o tratamento integral, instale no R `DBI`, `duckdb`, `digest` e `jsonlite`, coloque os 12 TXT em `dados_originais/` e execute `Rscript codigo/executar.R tratamento`. Depois retorne à validação em Python.
 
 ## 2. Criar a conta e o projeto Aiven
 
 1. Acesse [Aiven Console](https://console.aiven.io/) e crie a conta da equipe, concluindo a verificação de e-mail.
 2. Identifique ou crie um projeto e anote seu nome exato.
-3. Gere um token pessoal nas configurações de autenticação da conta, com prazo e permissões adequados ao projeto.
+3. Gere um token pessoal nas configurações de autenticação da conta, com prazo e permissões adequados ao projeto. Consulte o [passo a passo oficial](https://aiven.io/docs/platform/howto/create_authentication_token).
 4. Não crie o serviço manualmente: o próximo passo cria o PostgreSQL por Terraform.
 
 O plano padrão do código é `free-1-1gb`. Confirme que ele está disponível para o projeto. Se a plataforma não disponibilizar o plano gratuito, interrompa a implantação e revise a escolha; o código bloqueia planos pagos. A existência de um serviço gratuito do mesmo tipo na organização pode impedir outro.
@@ -43,7 +49,7 @@ Edite apenas a cópia local `infraestrutura/terraform.tfvars`:
 - substitua `203.0.113.10/32` pelo IP público da sua rede seguido de `/32`;
 - inclua os demais IPs necessários para a equipe, se aplicável.
 
-O IP do exemplo é reservado para documentação e não permite acesso da sua máquina. O token é solicitado em entrada oculta pelo script, sem aparecer no histórico.
+O IP do exemplo é reservado para documentação e não permite acesso da sua máquina. Use o IP público da sua rede mostrado pelo roteador ou pela ferramenta de consulta de IP de sua preferência. O token é solicitado em entrada oculta pelo script, sem aparecer no histórico. Se o PowerShell bloquear scripts locais, confira o conteúdo dos dois `.ps1` e, para esta janela, ajuste a política de execução conforme a configuração da sua máquina; não é necessário alterar a política global.
 
 Como esta pasta pode estar no OneDrive, guarde o estado Terraform fora dela. Os comandos abaixo criam o diretório privado de estado no perfil local da máquina:
 
@@ -74,17 +80,17 @@ Importar um recurso existente não prova que ele foi originalmente provisionado 
 
 No painel do serviço, obtenha host, porta, banco, usuário e senha e baixe a CA. Mantenha o arquivo CA em local privado. É possível usar `segredos/ca.pem`, ignorado pelo Git; o certificado CA serve para verificar o servidor e não substitui a senha.
 
-Na mesma janela PowerShell em que executará Rscript:
+Na mesma janela PowerShell em que executará Python:
 
 ```powershell
 .\codigo\configurar_conexao.ps1
-Rscript codigo/executar.R carga
-Rscript codigo/executar.R verificar-nuvem
+.\.venv\Scripts\python.exe codigo/executar.py carga
+.\.venv\Scripts\python.exe codigo/executar.py verificar-nuvem
 ```
 
 Informe os valores do painel nos prompts. O banco geralmente é `defaultdb`, mas use o valor realmente informado pelo serviço. A senha será solicitada com entrada oculta. Se a conexão falhar, confira o IP público autorizado, a porta e a CA. Não desative a validação de certificado.
 
-A carga usa uma transação e blocos de 20 mil linhas. Se houver erro antes do commit, as alterações da carga são revertidas. Se o schema já tiver dados, a carga para para evitar duplicação; para conferir uma carga existente, use `verificar-nuvem`. Nenhuma tabela é apagada automaticamente.
+A carga usa uma transação e transmite os CSVs em blocos de bytes por `COPY`, preservando os valores decimais. Ela confere totais, contagens mensais e soma salarial antes do commit. Se houver erro antes dele, as alterações da carga são revertidas. Após o commit, há nova conferência e geração da evidência. Se o schema já tiver dados, a carga para para evitar duplicação; para conferir uma carga existente, use `verificar-nuvem`. Nenhuma tabela é apagada automaticamente. O modo de verificação não altera o banco.
 
 ## 5. Guardar evidências e atualizar o status
 
@@ -96,21 +102,23 @@ Após uma execução real bem-sucedida:
 4. Execute [consultas_validacao.sql](../sql/consultas_validacao.sql) para apresentar resultados por mês e a auditoria.
 5. Atualize o status no README e em `documentacao/ENTREGA.md` somente depois dessas verificações. Registre a data real do provisionamento e da carga.
 
-A evidência gerada por R contém totais, hash, confirmação de TLS e data. Ela não contém host, usuário, senha ou token. Não publique um arquivo de exemplo se passando por evidência real.
+A evidência gerada por Python contém totais, hash, confirmação de TLS, conferência salarial, tamanho do banco e data. Ela não contém host, usuário, senha ou token. `verificacoes/carga_python_teste_local.json` identifica somente o teste em PostgreSQL local e não substitui a evidência de nuvem `carga_nuvem.json`.
 
 ## 6. Publicar no GitHub e enviar
 
-Revise `git status` e `git diff` antes de publicar. A pasta desta revisão é uma cópia do repositório original; os arquivos precisam ser enviados ao mesmo repositório da equipe. Com Git configurado e acesso à conta, pode-se publicar a branch da revisão e abrir uma pull request:
+A publicação deve ser realizada manualmente pela equipe, após revisar os arquivos e concluir a implantação. Primeiro, gere o pacote limpo a partir da sua execução real:
 
 ```powershell
-git status --short
-git diff --check
-git add .
-git commit -m "Completa infraestrutura e documentacao do marco 2"
-git push -u origin codex/entrega-terraform-seguranca
+.\.venv\Scripts\python.exe codigo/preparar_envio.py
 ```
 
-Se a revisão já estiver commitada, basta publicar a branch. No GitHub, abra a pull request dessa branch para a branch principal e incorpore após revisar. Se preferir upload manual, copie o conteúdo do pacote para a raiz do repositório existente, preservando nomes e diretórios. Inclua `.gitignore` e o lock do Terraform. Não envie o ZIP como substituto dos arquivos de código navegáveis.
+O comando bloqueia o envio final se não houver a evidência `carga_nuvem.json` da base atual. Ele grava `output/envio/PROJETO_BIG_DATA_ENVIO.zip` sem credenciais, ambiente virtual ou estado Terraform. Não envia arquivos à internet. Extraia **esse ZIP de envio em uma pasta nova** e abra a pasta `Projeto_Big_Data`. No repositório existente do GitHub, use **Add file → Upload files** para enviar o conteúdo dessa pasta limpa para a raiz, preservando os nomes e diretórios.
+
+Adicione `LEIA_ME_ETAPA_ATUAL.md`, `.gitignore`, `.gitattributes`, `requirements.txt`, `requirements-lock.txt`, `infraestrutura/`, `documentacao/` e os arquivos novos nas demais pastas. Em `codigo/`, inclua `executar.py` e a pasta `caged/` com seus arquivos Python. Preserve todos os arquivos anteriores. A base compactada em `resultados/` e os dicionários em `referencias/` continuam nas suas pastas. Inclua o lock `.terraform.lock.hcl`; confirme que arquivos iniciados por ponto também foram selecionados no upload.
+
+Preserve os arquivos da etapa anterior, inclusive os scripts R `00` a `05`: não é necessário remover ou editar nenhum deles para usar Python. Os comandos desta etapa usam os arquivos Python novos. `verificacoes/preservacao_etapa_anterior.json` comprova a igualdade dos 35 arquivos anteriores por SHA-256, incluindo o README. Como o enunciado pede atualização do README, a equipe precisará decidir antes do envio se poderá acrescentar a documentação da nova etapa; o texto está preparado separadamente em `LEIA_ME_ETAPA_ATUAL.md` e não foi aplicado ao arquivo anterior.
+
+Envie o conteúdo da pasta, sem criar outra pasta `Projeto_Big_Data` dentro do repositório e sem usar o ZIP como substituto dos arquivos navegáveis. Nunca selecione `.git/`, `.terraform/`, `.venv/`, `__pycache__/`, `tmp/`, state, `terraform.tfvars`, senhas, tokens ou a pasta `segredos/` no upload. O `.gitignore` não filtra arquivos arrastados manualmente no navegador. A pasta `resultados/` deve conter a base compactada; o CSV extraído e os intermediários locais não precisam ser enviados.
 
 Envie na plataforma da disciplina o link do repositório atualizado, conforme o procedimento da turma. O pacote e o guia não substituem o banco provisionado com a carga.
 

@@ -1,0 +1,21 @@
+{
+  "status": "carga_postgres_local_validada",
+  "linguagem": "Python",
+  "sha256_csv": "fe116caf8806e57cf726019e3add7e72fb022afe24bddaf29e98cdd6642d4381",
+  "resumo": [
+    {
+      "linhas": 1006405,
+      "meses": 12,
+      "movimentacoes": 51893337,
+      "admissoes": 26382492,
+      "desligamentos": 25510845,
+      "saldo": 871647
+    }
+  ],
+  "ocorrencias_auditoria": 21,
+  "tls_verificado": true,
+  "somas_salariais_conferidas": true,
+  "tamanho_banco_bytes": 195554451,
+  "verificado_em_utc": "2026-10-20T13:46:44.485937+00:00",
+  "ambiente": "PostgreSQL 17.6 temporario local; nao e evidencia de nuvem"
+}

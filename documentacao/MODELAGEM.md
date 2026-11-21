@@ -73,6 +73,6 @@ O diagrama apresenta as tabelas físicas e a única relação imposta por chave 
 
 Contagens e IDs usam `BIGINT`; datas usam `DATE`; códigos são `TEXT` para preservar a representação; a soma salarial usa `NUMERIC(38,6)`. A média armazenada é derivada. Para recompor a média de vários grupos, utilizar `SUM(soma_salarios_validos) / NULLIF(SUM(quantidade_salarios_validos), 0)`, sem fazer média simples das médias.
 
-Os índices em `competencia` e `(uf_codigo, competencia)` atendem filtros temporais e geográficos. A chave primária também cria índice em `id`. As validações em R conferem unicidade dos grupos, totais e consistência dos indicadores; a chave primária e a FK da auditoria são impostas também pelo PostgreSQL. O DDL completo está em [estrutura.sql](../sql/estrutura.sql).
+Os índices em `competencia` e `(uf_codigo, competencia)` atendem filtros temporais e geográficos. A chave primária também cria índice em `id`. O tratamento em R gera os grupos; a validação independente em Python confere unicidade, totais, contagens mensais e consistência dos indicadores. A chave primária e a FK da auditoria são impostas também pelo PostgreSQL. O DDL completo está em [estrutura.sql](../sql/estrutura.sql).
 
 O projeto permite estudar admissões, desligamentos e saldo. A taxa convencional de turnover precisa do estoque de vínculos como denominador; essa medida não é calculada somente com os arquivos MOV.

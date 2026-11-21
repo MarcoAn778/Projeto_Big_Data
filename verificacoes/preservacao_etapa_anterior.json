@@ -1,0 +1,216 @@
+{
+  "referencia": "1173c84",
+  "arquivos": [
+    {
+      "arquivo": "Entrega Técnica fase 2 (3).pdf",
+      "sha256_original": "77f2dc6713d1289828cfc0ee53899996fde73917409805e92eb2afdca27f41a2",
+      "sha256_atual": "77f2dc6713d1289828cfc0ee53899996fde73917409805e92eb2afdca27f41a2",
+      "identico": true
+    },
+    {
+      "arquivo": "codigo/00_configuracao.R",
+      "sha256_original": "898aa8023dd017e3202df5ac3cc27eae1c5421c5645964b99561264856e86514",
+      "sha256_atual": "898aa8023dd017e3202df5ac3cc27eae1c5421c5645964b99561264856e86514",
+      "identico": true
+    },
+    {
+      "arquivo": "codigo/01_tratar.R",
+      "sha256_original": "b53fca79644b77b72db07c01bbe4e83d22cb30b81b45e2d738ae5aa55b2ab1c4",
+      "sha256_atual": "b53fca79644b77b72db07c01bbe4e83d22cb30b81b45e2d738ae5aa55b2ab1c4",
+      "identico": true
+    },
+    {
+      "arquivo": "codigo/02_finalizar.R",
+      "sha256_original": "e6eb9ec715290e0b8135b9295547b63148d50807e45dd735f19afe3a1837196e",
+      "sha256_atual": "e6eb9ec715290e0b8135b9295547b63148d50807e45dd735f19afe3a1837196e",
+      "identico": true
+    },
+    {
+      "arquivo": "codigo/03_conectar.R",
+      "sha256_original": "ed327835c2209fd88ecd1485bb9aa0722ab78734c66ff4b0ae9ba128e5595aca",
+      "sha256_atual": "ed327835c2209fd88ecd1485bb9aa0722ab78734c66ff4b0ae9ba128e5595aca",
+      "identico": true
+    },
+    {
+      "arquivo": "codigo/04_carregar.R",
+      "sha256_original": "34647d2c3ddc93131c4ed4086984ffe3c118f5bcdebd0eb12c95c0af8d87ae50",
+      "sha256_atual": "34647d2c3ddc93131c4ed4086984ffe3c118f5bcdebd0eb12c95c0af8d87ae50",
+      "identico": true
+    },
+    {
+      "arquivo": "codigo/05_encerrar.R",
+      "sha256_original": "fa57bc6c4b32588d140c52a24114f8041fc4c4a8d9e1748f18328f17763efb2e",
+      "sha256_atual": "fa57bc6c4b32588d140c52a24114f8041fc4c4a8d9e1748f18328f17763efb2e",
+      "identico": true
+    },
+    {
+      "arquivo": "dados/arquivos_origem.csv",
+      "sha256_original": "73f24f5773068f159052b4a3628c18dae5fee6ffbdfe684bf8291e4f15b30db3",
+      "sha256_atual": "73f24f5773068f159052b4a3628c18dae5fee6ffbdfe684bf8291e4f15b30db3",
+      "identico": true
+    },
+    {
+      "arquivo": "referencias/dicionarios.csv",
+      "sha256_original": "318d3412bb36d04d8774e706abfac49249c547d6f8158e1aefbb9f67f83d6fde",
+      "sha256_atual": "318d3412bb36d04d8774e706abfac49249c547d6f8158e1aefbb9f67f83d6fde",
+      "identico": true
+    },
+    {
+      "arquivo": "resultados/base_tratada.zip",
+      "sha256_original": "64f6609da7d0d8495c2f055850f2d8d45ca69c552845eaf01210a7f7340dd38b",
+      "sha256_atual": "64f6609da7d0d8495c2f055850f2d8d45ca69c552845eaf01210a7f7340dd38b",
+      "identico": true
+    },
+    {
+      "arquivo": "resultados/resumo_processamento.json",
+      "sha256_original": "888ff718d90f989efc0e660b3d379628814c6b85bb21ce73c0d09ecafd6f68bb",
+      "sha256_atual": "888ff718d90f989efc0e660b3d379628814c6b85bb21ce73c0d09ecafd6f68bb",
+      "identico": true
+    },
+    {
+      "arquivo": "sql/agregar.sql",
+      "sha256_original": "295f3de3c5d8a9a694ed9a3673fbfbbaa941eb9282718b8d35d6443bfe4bd2b2",
+      "sha256_atual": "295f3de3c5d8a9a694ed9a3673fbfbbaa941eb9282718b8d35d6443bfe4bd2b2",
+      "identico": true
+    },
+    {
+      "arquivo": "sql/categorias.sql",
+      "sha256_original": "5a3909d316b089cbdea9ee7e8f2a8baf2e8f77b645fac44186958cc9c13dc3cf",
+      "sha256_atual": "5a3909d316b089cbdea9ee7e8f2a8baf2e8f77b645fac44186958cc9c13dc3cf",
+      "identico": true
+    },
+    {
+      "arquivo": "sql/estrutura.sql",
+      "sha256_original": "3c8876e96cafa03b16d9b707e2018cf3e660003a326e850ecb7d75103c1f59d3",
+      "sha256_atual": "3c8876e96cafa03b16d9b707e2018cf3e660003a326e850ecb7d75103c1f59d3",
+      "identico": true
+    },
+    {
+      "arquivo": "sql/limpar.sql",
+      "sha256_original": "d41b559a488268daf0c2f08bea02086531ef6031d5e95bb751f08ca93ec94fa4",
+      "sha256_atual": "d41b559a488268daf0c2f08bea02086531ef6031d5e95bb751f08ca93ec94fa4",
+      "identico": true
+    },
+    {
+      "arquivo": "sql/view_rotulos.sql",
+      "sha256_original": "9c09aef94fdb986a5741be506a03cad881280d261165cdb842d3f42e6773f8cd",
+      "sha256_atual": "9c09aef94fdb986a5741be506a03cad881280d261165cdb842d3f42e6773f8cd",
+      "identico": true
+    },
+    {
+      "arquivo": "testes/originais_conferidos.json",
+      "sha256_original": "39a8b22bdc0b7be95ab037c3e20f1148d4face8cb0416906a8c78488f9db5dc1",
+      "sha256_atual": "39a8b22bdc0b7be95ab037c3e20f1148d4face8cb0416906a8c78488f9db5dc1",
+      "identico": true
+    },
+    {
+      "arquivo": "testes/testar_regras.R",
+      "sha256_original": "91af5626be3026cd0ec2ba64d709f814dfd4ca792a701abecfa43e0c6d3fcc58",
+      "sha256_atual": "91af5626be3026cd0ec2ba64d709f814dfd4ca792a701abecfa43e0c6d3fcc58",
+      "identico": true
+    },
+    {
+      "arquivo": "verificacoes/anomalias_202508.csv",
+      "sha256_original": "7d113ac55f48a6b7f41ed64f4a0bdcfdaeaa7396953eabe8b41deef6c21d9398",
+      "sha256_atual": "7d113ac55f48a6b7f41ed64f4a0bdcfdaeaa7396953eabe8b41deef6c21d9398",
+      "identico": true
+    },
+    {
+      "arquivo": "verificacoes/anomalias_202509.csv",
+      "sha256_original": "fca18835a45a4430d5c64da27016a14475eb32a386b613fd2a80b1b9d38b9b68",
+      "sha256_atual": "fca18835a45a4430d5c64da27016a14475eb32a386b613fd2a80b1b9d38b9b68",
+      "identico": true
+    },
+    {
+      "arquivo": "verificacoes/anomalias_202510.csv",
+      "sha256_original": "0555f079cbf03495c35d2f6f0602872c634b570e5789b3d994a604c1d5a83aee",
+      "sha256_atual": "0555f079cbf03495c35d2f6f0602872c634b570e5789b3d994a604c1d5a83aee",
+      "identico": true
+    },
+    {
+      "arquivo": "verificacoes/anomalias_202511.csv",
+      "sha256_original": "104aaa3dd7204e777e0b1a14b3a4a734c17fbb85609ffca801cea5798538f091",
+      "sha256_atual": "104aaa3dd7204e777e0b1a14b3a4a734c17fbb85609ffca801cea5798538f091",
+      "identico": true
+    },
+    {
+      "arquivo": "verificacoes/anomalias_202512.csv",
+      "sha256_original": "55557fa36d2d2cb639235e5b4f5a35d4cd37a964184c56f1576d9d14107bea9c",
+      "sha256_atual": "55557fa36d2d2cb639235e5b4f5a35d4cd37a964184c56f1576d9d14107bea9c",
+      "identico": true
+    },
+    {
+      "arquivo": "verificacoes/anomalias_202601.csv",
+      "sha256_original": "de056ad734bb0d149b1908baca68e54892cd2911ead8a0ae327bb21eeaa8a138",
+      "sha256_atual": "de056ad734bb0d149b1908baca68e54892cd2911ead8a0ae327bb21eeaa8a138",
+      "identico": true
+    },
+    {
+      "arquivo": "verificacoes/anomalias_202602.csv",
+      "sha256_original": "63f07764f0e54d277158649cc3291bb9ce8ee686c3ad200f90b1fdc65becd24f",
+      "sha256_atual": "63f07764f0e54d277158649cc3291bb9ce8ee686c3ad200f90b1fdc65becd24f",
+      "identico": true
+    },
+    {
+      "arquivo": "verificacoes/anomalias_202603.csv",
+      "sha256_original": "924d8003e39b3d7a66e3c005c706d1e0b27ae16eaa42f53f2f143363142945d4",
+      "sha256_atual": "924d8003e39b3d7a66e3c005c706d1e0b27ae16eaa42f53f2f143363142945d4",
+      "identico": true
+    },
+    {
+      "arquivo": "verificacoes/anomalias_202604.csv",
+      "sha256_original": "8f1abfdabab1aadd4713250bd4144bc3cb2ad75058c1df0e91372203d2f1d356",
+      "sha256_atual": "8f1abfdabab1aadd4713250bd4144bc3cb2ad75058c1df0e91372203d2f1d356",
+      "identico": true
+    },
+    {
+      "arquivo": "verificacoes/anomalias_202605.csv",
+      "sha256_original": "055aff9e5f4cd0da9c7f20f32e50f7c060671f1459f893d8bd1befc399196265",
+      "sha256_atual": "055aff9e5f4cd0da9c7f20f32e50f7c060671f1459f893d8bd1befc399196265",
+      "identico": true
+    },
+    {
+      "arquivo": "verificacoes/anomalias_202606.csv",
+      "sha256_original": "63f07764f0e54d277158649cc3291bb9ce8ee686c3ad200f90b1fdc65becd24f",
+      "sha256_atual": "63f07764f0e54d277158649cc3291bb9ce8ee686c3ad200f90b1fdc65becd24f",
+      "identico": true
+    },
+    {
+      "arquivo": "verificacoes/anomalias_202607.csv",
+      "sha256_original": "63f07764f0e54d277158649cc3291bb9ce8ee686c3ad200f90b1fdc65becd24f",
+      "sha256_atual": "63f07764f0e54d277158649cc3291bb9ce8ee686c3ad200f90b1fdc65becd24f",
+      "identico": true
+    },
+    {
+      "arquivo": "verificacoes/dicionario_colunas.csv",
+      "sha256_original": "2cd7b9d85e19b30ae00ad78ff36f60935009467eefeb0c9536b6163900c13c6f",
+      "sha256_atual": "2cd7b9d85e19b30ae00ad78ff36f60935009467eefeb0c9536b6163900c13c6f",
+      "identico": true
+    },
+    {
+      "arquivo": "verificacoes/qualidade_mensal.csv",
+      "sha256_original": "593778dcf0b6fd6874fd1db257cea13bf898e56eee05c17d4aa730403ef3d435",
+      "sha256_atual": "593778dcf0b6fd6874fd1db257cea13bf898e56eee05c17d4aa730403ef3d435",
+      "identico": true
+    },
+    {
+      "arquivo": "verificacoes/resultado_processamento.json",
+      "sha256_original": "22f577b29b58054e6e98897ddefd6188970a841c56f5d2df563678258de8474c",
+      "sha256_atual": "22f577b29b58054e6e98897ddefd6188970a841c56f5d2df563678258de8474c",
+      "identico": true
+    },
+    {
+      "arquivo": "verificacoes/resumo_mensal.csv",
+      "sha256_original": "bd444cc97bbe3787de0482e666515a6f7f083e5dbb4cd5f8fcb545ce7b369943",
+      "sha256_atual": "bd444cc97bbe3787de0482e666515a6f7f083e5dbb4cd5f8fcb545ce7b369943",
+      "identico": true
+    },
+    {
+      "arquivo": "README.md",
+      "sha256_original": "b54e2c09fb82f548da21e0cde462f80f2522b7e557f4a11dae9f335614ea665c",
+      "sha256_atual": "b54e2c09fb82f548da21e0cde462f80f2522b7e557f4a11dae9f335614ea665c",
+      "identico": true
+    }
+  ],
+  "instrucoes_novas": "LEIA_ME_ETAPA_ATUAL.md; nenhum arquivo da entrega anterior foi alterado"
+}
