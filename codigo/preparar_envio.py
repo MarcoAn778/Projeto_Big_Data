@@ -33,6 +33,7 @@ def selecionar_arquivos(raiz: Path) -> list[Path]:
     nomes.update({"referencias/dicionarios.csv", "resultados/resumo_processamento.json",
                   "resultados/arquivos_origem.csv", *[f"resultados/revisao_salarios_{m}.csv" for m in MESES]})
     evidencias = {"resultado_processamento.json", "validacao_base_atual.json", "carga_nuvem.json", "carga_nuvem_historica.json",
+                 "carga_dashboard_teste_local.json", "terraform_entrega.json",
                  "carga_python_teste_local.json", "preservacao_etapa_anterior.json", "dicionario_colunas.csv", "qualidade_mensal.csv", "resumo_mensal.csv",
                  *[f"anomalias_{m}.csv" for m in MESES]}
     nomes.update("verificacoes/" + n for n in evidencias)

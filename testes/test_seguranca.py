@@ -17,6 +17,7 @@ class TesteSeguranca(unittest.TestCase):
     def test_detector_reconhece_exemplos_sem_bloquear_modelos(self):
         self.assertTrue(caminho_privado("infraestrutura/terraform.tfstate"))
         self.assertTrue(caminho_privado(".env.local"))
+        self.assertTrue(caminho_privado("AivenTokentxt.txt"))
         self.assertFalse(caminho_privado(".env.example"))
         self.assertFalse(caminho_privado(".streamlit/config.toml"))
         self.assertIsNotNone(BUSCA.search("AIVEN_TOKEN" + "=valor-ficticio"))

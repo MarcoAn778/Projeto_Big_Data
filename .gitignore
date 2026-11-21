@@ -5,6 +5,8 @@
 .streamlit/secrets.toml
 .pgpass
 pgpass.conf
+AivenToken*.txt
+aiven-token*.txt
 .Renviron
 .Rhistory
 .RData

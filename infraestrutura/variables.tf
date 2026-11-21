@@ -29,6 +29,12 @@ variable "cloud_name" {
   default     = null
 }
 
+variable "termination_protection" {
+  description = "Protecao no Aiven. Para um servico importado, configure o valor atual antes de aplicar."
+  type        = bool
+  default     = true
+}
+
 variable "allowed_cidrs" {
   description = "IPs publicos autorizados, em CIDR. Ex.: IP atual da equipe seguido de /32."
   type        = set(string)
