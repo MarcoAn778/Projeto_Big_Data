@@ -1,0 +1,38 @@
+# Credenciais e configuracao privada
+.env
+.env.*
+!.env.example
+.Renviron
+.Rhistory
+.RData
+segredos/
+*.pem
+*.key
+*.p12
+*.pfx
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+
+# Estado e planos Terraform podem conter senhas, mesmo sem outputs de senha
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Arquivos locais e intermediarios; o ZIP publicado continua versionado
+dados_originais/
+resultados/*.csv
+resultados/VALIDADO.txt
+*.duckdb
+*.duckdb.wal
+.Rproj.user/
+.biblioteca/
+tmp/

@@ -1,0 +1,4 @@
+# CSVs de evidencia precisam conservar os bytes usados no SHA-256.
+*.csv -text
+*.zip binary
+*.pdf binary

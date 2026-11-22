@@ -1,0 +1,6 @@
+# Copie para terraform.tfvars e substitua os exemplos localmente.
+# Token e senha NAO pertencem a este arquivo.
+project_name  = "SUBSTITUA_PELO_PROJETO_DA_EQUIPE"
+service_name  = "caged-postgres"
+plan          = "free-1-1gb"
+allowed_cidrs = ["203.0.113.10/32"] # IP de documentacao: substitua pelo seu IP publico.
